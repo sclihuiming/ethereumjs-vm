@@ -8,6 +8,14 @@ import { default as p6 } from './06-ecadd'
 import { default as p7 } from './07-ecmul'
 import { default as p8 } from './08-ecpairing'
 import { default as p9 } from './09-blake2f'
+import { default as pa } from './0a-bls12-g1add'
+import { default as pb } from './0b-bls12-g1mul'
+import { default as pc } from './0c-bls12-g1multiexp'
+import { default as pd } from './0d-bls12-g2add'
+import { default as pe } from './0e-bls12-g2mul'
+import { default as pf } from './0f-bls12-g2multiexp'
+import { default as p10 } from './10-bls12-pairing'
+import { default as p12 } from './12-bls12-map-fp2-to-g2'
 import Common from '@ethereumjs/common'
 
 interface Precompiles {
@@ -29,6 +37,14 @@ const precompiles: Precompiles = {
   '0000000000000000000000000000000000000007': p7,
   '0000000000000000000000000000000000000008': p8,
   '0000000000000000000000000000000000000009': p9,
+  '000000000000000000000000000000000000000a': pa,
+  '000000000000000000000000000000000000000b': pb,
+  '000000000000000000000000000000000000000c': pc,
+  '000000000000000000000000000000000000000d': pd,
+  '000000000000000000000000000000000000000e': pe,
+  '000000000000000000000000000000000000000f': pf,
+  '0000000000000000000000000000000000000010': p10,
+  '0000000000000000000000000000000000000012': p12,
 }
 
 const precompileAvailability: PrecompileAvailability = {
@@ -41,6 +57,14 @@ const precompileAvailability: PrecompileAvailability = {
   '0000000000000000000000000000000000000007': 'byzantium',
   '0000000000000000000000000000000000000008': 'byzantium',
   '0000000000000000000000000000000000000009': 'istanbul',
+  '000000000000000000000000000000000000000a': 'berlin',
+  '000000000000000000000000000000000000000b': 'berlin',
+  '000000000000000000000000000000000000000c': 'berlin',
+  '000000000000000000000000000000000000000d': 'berlin',
+  '000000000000000000000000000000000000000f': 'berlin',
+  '000000000000000000000000000000000000000e': 'berlin',
+  '0000000000000000000000000000000000000010': 'berlin',
+  '0000000000000000000000000000000000000012': 'berlin',
 }
 
 function getPrecompile(address: string, common: Common): PrecompileFunc {
